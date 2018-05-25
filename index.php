@@ -15,7 +15,6 @@ spl_autoload_register(function ($class){
     if(file_exists($path)){
         require_once $path;
     }
-    //include 'classes/' . $class . '.class.php';
 });
 
 session_start();
