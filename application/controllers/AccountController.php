@@ -12,12 +12,18 @@ use application\core\Controller;
 
 class AccountController extends Controller {
 
+    public function before(){
+        $this->view->layout = 'custom';
+    }
+
     public function loginAction(){
-        echo 'login page';
+        $this->view->render('Log in');
     }
 
     public function registerAction(){
-        echo 'register page';
+        //$this->view->layout = 'custom';
+        $this->view->render('Register');
+        //$this->view->path = 'test/test';
         //var_dump($this->route);
     }
 }

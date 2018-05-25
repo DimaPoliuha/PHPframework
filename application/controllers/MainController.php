@@ -13,11 +13,11 @@ use application\core\Controller;
 class MainController extends Controller {
 
     public function indexAction(){
-        echo 'main page';
+        $this->view->render('Main page');
     }
 
     public function contactsAction(){
-        echo 'contact page';
+        $this->view->render('Contacts');
     }
 
 }
