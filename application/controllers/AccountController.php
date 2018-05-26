@@ -13,12 +13,16 @@ use const application\core\ROOT_URL;
 
 class AccountController extends Controller {
 
-    public function before(){
-        $this->view->layout = 'custom';
-    }
+//    public function before(){
+//        $this->view->layout = 'custom';
+//    }
 
     public function loginAction(){
 //        $this->view->redirect('/' . ROOT_URL);
+        if(!empty($_POST)){
+//            $this->view->message('some status', 'some text');
+            $this->view->location('/' . ROOT_URL);
+        }
         $this->view->render('Log in');
     }
 
