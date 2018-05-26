@@ -41,6 +41,14 @@ class View{
         header('location: ' . $url);
     }
 
+    public function message($status, $message)    {
+        exit(json_encode(['status' => $status, 'message' => $message]));
+    }
+
+    public function location($url)    {
+        exit(json_encode(['url' => $url]));
+    }
+
     public static function errorCode($code){
         http_response_code($code);
         $path = 'application/views/errors/' . $code . '.php';
