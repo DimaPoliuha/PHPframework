@@ -27,7 +27,10 @@ class View{
             ob_start();
             require_once $path;
             $content = ob_get_clean();
-            require_once 'application/views/layouts/' . $this->layout . '.php';
+            $layoutPath = 'application/views/layouts/' . $this->layout . '.php';
+            if(file_exists($layoutPath)) {
+                require_once $layoutPath;
+            }
         }
 //          else{
 //            echo 'view not found: ' . $this->path;

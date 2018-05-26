@@ -17,9 +17,12 @@ class Router{
 
 
     function __construct(){
-        $arr = require_once 'application/config/routes.php';
-        foreach ($arr as $key => $val){
-            $this->add($key, $val);
+        $path = 'application/config/routes.php';
+        if (file_exists($path)){
+            $arr = require_once $path;
+            foreach ($arr as $key => $val){
+                $this->add($key, $val);
+            }
         }
         //debug($arr);
         //debug($this->routes);
