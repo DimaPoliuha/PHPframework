@@ -9,6 +9,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
+use const application\core\ROOT_URL;
 
 class AccountController extends Controller {
 
@@ -17,6 +18,7 @@ class AccountController extends Controller {
     }
 
     public function loginAction(){
+//        $this->view->redirect('/' . ROOT_URL);
         $this->view->render('Log in');
     }
 

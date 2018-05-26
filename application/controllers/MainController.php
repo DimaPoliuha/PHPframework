@@ -13,6 +13,11 @@ use application\core\Controller;
 class MainController extends Controller {
 
     public function indexAction(){
+//        $vars = [
+//            'name' => 'Some',
+//            'age' => 18,
+//        ];
+//        $this->view->render('Main page', $vars);
         $this->view->render('Main page');
     }
 
