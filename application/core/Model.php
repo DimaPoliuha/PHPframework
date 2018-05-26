@@ -5,6 +5,7 @@
  * Date: 26.05.2018
  * Time: 14:19
  */
+
 namespace application\core;
 
 use application\lib\Db;
