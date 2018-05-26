@@ -8,11 +8,12 @@
 ?>
 
 <h2>login page</h2>
-<form>
+<form action="/<?php echo \application\core\ROOT_URL?>account/login" method="post">
+
     <p>login</p>
-    <p><input type="text"></p>
+    <p><input type="text" name="login"></p>
     <p>password</p>
-    <p><input type="text"></p>
-    <b><button>log in</button></b>
+    <p><input type="text" name="password"></p>
+    <b><button type="submit" name="enter">log in</button></b>
 
 </form>

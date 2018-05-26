@@ -9,5 +9,8 @@
 
 <p>main page</p>
 
-<!--<p>Name: --><?php //echo $name; ?><!--</p>-->
-<!--<p>Age: --><?php //echo $age; ?><!--</p>-->
+<?php foreach ($news as $new): ?>
+    <h3><?php echo $new['title'] ?></h3>
+    <p><?php echo $new['description'] ?></p>
+    <hr>
+<?php endforeach;?>
