@@ -8,7 +8,7 @@
 
 namespace application\core;
 
-const ROOT_URI = 'PHPframework/';
+const ROOT_URL = 'PHPframework/';
 
 class Router{
 
@@ -31,7 +31,7 @@ class Router{
     }
 
     public function match(){
-        $url = trim(substr($_SERVER['REQUEST_URI'], strlen(ROOT_URI)), '/');
+        $url = trim(substr($_SERVER['REQUEST_URI'], strlen(ROOT_URL)), '/');
         //debug($url);
         foreach ($this->routes as $route => $params) {
             if(preg_match($route, $url, $matches)){
@@ -52,15 +52,18 @@ class Router{
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else{
-                    echo 'action not found';
+                    View::errorCode(404);
+//                    echo 'action not found';
                 }
             } else{
-                echo 'not found controller: ' . $path;
+                View::errorCode(404);
+//                echo 'not found controller: ' . $path;
             }
             //echo '<p>controller: <b>' . $this->params['controller'] . '</b></p>';
             //echo '<p>action: <b>' . $this->params['action'] . '</b></p>';
         } else{
-            echo 'route not found';
+            View::errorCode(404);
+//            echo 'route not found';
         }
     }
 }
