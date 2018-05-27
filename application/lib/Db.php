@@ -392,4 +392,8 @@ class Db {
 
         return $pdostatement;
     }
+
+    public function lastInsertId(){
+        return $this->db->lastInsertId();
+    }
 }
