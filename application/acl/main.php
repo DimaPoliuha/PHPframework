@@ -8,7 +8,7 @@
 
 return [
     'all' => [
-
+        'index',
     ],
     'authorize' => [
 
